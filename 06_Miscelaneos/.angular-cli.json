@@ -25,6 +25,7 @@
       ],
       "scripts": [
         "assets/jquery/jquery-3.2.1.slim.min.js",
+        "assets/popper/popper.js",
         "assets/b4/js/bootstrap.min.js"
       ],
       "environmentSource": "environments/environment.ts",

@@ -12,21 +12,21 @@ export class SpotifyService {
   constructor( private http:Http ) { }
 
   getArtistas( termino:string ){
-  
-      let headers = new Headers();
-      headers.append('authorization', 'Bearer BQCFOSgDAiCX-GEdL6wuqy2XUKHwPPQ4Y5L1QgR4554wpfuzt60AUVWxjHm9QdpFrMqtf88G3PIJGpwpMZkiCub4d9f3UTHdCSRag0J9KGPK-A9vaABOTlaSaDW8cKLTNOzf-HdZKg');
-      
-      let query = `?q=${ termino }&type=artist`;
-      let url = this.urlBusqueda + query;
-  
-      return this.http.get( url, { headers } ).map( res => {
-        console.log( res.json().artists.items ); 
-        this.artistas = res.json().artists.items;
-  
-        return res.json().artists.items;
-      })
-  
-    }
+
+    let headers = new Headers();
+    headers.append('authorization', 'Bearer BQCFOSgDAiCX-GEdL6wuqy2XUKHwPPQ4Y5L1QgR4554wpfuzt60AUVWxjHm9QdpFrMqtf88G3PIJGpwpMZkiCub4d9f3UTHdCSRag0J9KGPK-A9vaABOTlaSaDW8cKLTNOzf-HdZKg');
+    
+    let query = `?q=${ termino }&type=artist`;
+    let url = this.urlBusqueda + query;
+
+    return this.http.get( url, { headers } ).map( res => {
+      console.log( res.json().artists.items ); 
+      this.artistas = res.json().artists.items;
+
+      return res.json().artists.items;
+    })
+
+  }
 
     getArtista( id:string ){
       
